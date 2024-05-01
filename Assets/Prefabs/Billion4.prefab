@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6750645317040775972}
   - component: {fileID: -9023174412219094553}
   - component: {fileID: 578069319613666478}
+  - component: {fileID: -6974679753645703466}
+  - component: {fileID: -1895502774923712925}
   m_Layer: 0
   m_Name: Billion4
   m_TagString: Untagged
@@ -150,6 +152,38 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-6974679753645703466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3669232659477184129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66ea41f41bb7184d8961e44ba6287f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flag: {fileID: 0}
+  HealthCircle: {fileID: 0}
+  health: 3
+  billionSpeed: 3
+  Billion1Spawner: {fileID: 0}
+  healthCirclesize: 1
+  billionsArray: []
+--- !u!114 &-1895502774923712925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3669232659477184129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb4ccabfefd5a443aee4b61f20dbcd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fl: []
 --- !u!1 &9107538883064182979
 GameObject:
   m_ObjectHideFlags: 0

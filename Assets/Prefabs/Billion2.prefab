@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -9023174412219094553}
   - component: {fileID: 578069319613666478}
   - component: {fileID: 1148791845074117617}
+  - component: {fileID: 6344839067477922840}
   m_Layer: 0
   m_Name: Billion2
   m_TagString: Untagged
@@ -167,10 +168,22 @@ MonoBehaviour:
   HealthCircle: {fileID: 9107538883064182979}
   health: 3
   billionSpeed: 1
-  playerSpawn: {fileID: 0}
   Billion1Spawner: {fileID: 0}
   healthCirclesize: 1
   billionsArray: []
+--- !u!114 &6344839067477922840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3669232659477184129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f26e4235a10ed984a8f7325db145f8bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fl: []
 --- !u!1 &9107538883064182979
 GameObject:
   m_ObjectHideFlags: 0

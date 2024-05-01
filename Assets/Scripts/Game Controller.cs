@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     public List<GameObject> fl3 = new List<GameObject>();
     public List<GameObject> fl4 = new List<GameObject>();
 
+    private int maxFlags = 2;
 
     void Start()
     {
@@ -30,34 +31,74 @@ public class GameController : MonoBehaviour
     {
         flagSpawn = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         flagSpawn.z = -.5f;
-        if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.Q))
+
+        if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.Q) && fl1.Count < maxFlags)
         {
-            Debug.Log("Spawned Flag");
-            GameObject flag = Instantiate(flag1, flagSpawn, Quaternion.identity);
-            fl1.Add(flag);
-            
-        }
-        if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.W))
-        {
-            Debug.Log("Spawned Flag2");
-            GameObject flag = Instantiate(flag2, flagSpawn, Quaternion.identity);
-            fl2.Add(flag);
+            SpawnFlag(flag1, fl1);
 
         }
-        if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.E))
+        if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.W) && fl1.Count < maxFlags)
         {
-            Debug.Log("Spawned Flag3");
-            GameObject flag = Instantiate(flag3, flagSpawn, Quaternion.identity);
-            fl3.Add(flag);
+            SpawnFlag(flag2, fl1);
 
         }
-        if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.R))
+        if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.E) && fl1.Count < maxFlags)
         {
-            Debug.Log("Spawned Flag4");
-            GameObject flag = Instantiate(flag4, flagSpawn, Quaternion.identity);
-            fl4.Add(flag);
+            SpawnFlag(flag3, fl3);
+
+        }
+        if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.R) && fl1.Count < maxFlags)
+        {
+            SpawnFlag(flag4, fl4);
+
+        }
+
+        if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.Q) && fl1.Count == maxFlags)
+        {
+            MoveFlag(fl1);
+
+        }
+        if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.W) && fl1.Count == maxFlags)
+        {
+            MoveFlag(fl2);
+
+        }
+        if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.E) && fl1.Count == maxFlags)
+        {
+            MoveFlag(fl3);
+
+        }
+        if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.R) && fl1.Count == maxFlags)
+        {
+            MoveFlag(fl4);
 
         }
 
     }
+
+    void SpawnFlag(GameObject fl, List<GameObject> flaglist) {
+        GameObject flag = Instantiate(fl, flagSpawn, Quaternion.identity);
+        flaglist.Add(flag);
+
+    }
+
+    void MoveFlag(List<GameObject> fl)
+    {
+        GameObject closestFlag = null;
+        float closestDistance = float.MaxValue;
+        foreach (GameObject flag in fl)
+        {
+            float distance = Vector3.Distance(flag.transform.position, flagSpawn);
+            if (distance < closestDistance)
+            {
+                closestFlag = flag;
+                closestDistance = distance;
+            }
+        }
+        if (closestFlag != null)
+        {
+            closestFlag.transform.position = flagSpawn;
+        }
+    }
+
 }

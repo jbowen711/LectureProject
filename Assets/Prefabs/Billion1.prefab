@@ -115,12 +115,12 @@ Transform:
   m_GameObject: {fileID: 7359041862997654610}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: -5, z: -1}
+  m_LocalPosition: {x: -0.5, y: -5, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4914089401050920823}
   - {fileID: 6755044492261982482}
+  - {fileID: 4914089401050920823}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8590433102241934716
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc905b7c94179084c951162c254d33fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  purpleFlag: {fileID: 0}
+  fl1: []
 --- !u!58 &781272053684953913
 CircleCollider2D:
   m_ObjectHideFlags: 0

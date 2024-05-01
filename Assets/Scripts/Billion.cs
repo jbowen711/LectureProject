@@ -123,6 +123,17 @@ public class Billion : MonoBehaviour
     }
 
 
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("PowerUp"))
+        {
+            Debug.Log("Collided");
+            Destroy(collision.gameObject);
+            Heal();
+            billionSpeed += 1;
+        }
+    }
     private void TakeDamage()
     {
 
@@ -134,6 +145,14 @@ public class Billion : MonoBehaviour
         health -= 1;
         Debug.Log("DamageTaken");
         
+    }
+    private void Heal()
+    {
+        healthCirclesize = healthCirclesize + 0.2f;
+        HealthCircle.gameObject.transform.localScale = new Vector3(healthCirclesize, healthCirclesize, 0f);
+        health += 1;
+        Debug.Log("Healed");
+
     }
 
     void Die()
